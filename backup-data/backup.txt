@@ -1,1 +1,0 @@
-[{"title":"keyboard","price":"15.00","thumbnail":"https://www.example.com/images/keyboard.jpg","id":1},{"title":"mouse","price":"8.00","thumbnail":"https://www.example.com/images/mouse.jpg","id":2}]
