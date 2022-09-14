@@ -64,7 +64,7 @@ export default class Contenedor {
       }
     
     async deleteAll(){
-        newContent = []
+        let newContent = []
 
         try {
             await fs.promises.writeFile(this.file, JSON.stringify(newContent), 'utf8') 
