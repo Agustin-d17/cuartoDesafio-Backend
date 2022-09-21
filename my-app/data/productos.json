@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "title": "Keyboard",
+        "price": "15.99",
+        "thumbnail": "https://www.example.com/images/keyboard.jpg"
+    },
+    {
+        "id": "1",
+        "title": "Mouse",
+        "price": "7.99",
+        "thumbnail": "https://www.example.com/images/keyboard.jpg"
+    },
+    {
+        "id": "1",
+        "title": "Headphones",
+        "price": "12.99",
+        "thumbnail": "https://www.example.com/images/keyboard.jpg"
+    }
+]
