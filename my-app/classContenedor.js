@@ -19,7 +19,7 @@ export default class Contenedor {
         const content = await this.readFile();
         
             if (content.length !== 0){
-                let newId = content[content.length - 1].id + 1
+                let newId = parseInt(content[content.length - 1].id) + 1
                 await fs.promises.writeFile(this.file, JSON.stringify([...content, {...obj, id: newId}]), 'utf8');
                 console.log(`id del elemento agregado: ${newId}`)
             }else{
@@ -71,6 +71,29 @@ export default class Contenedor {
             console.log("Productos eliminados")
         }catch(err){
             console.log(err)
+        }
+    }
+
+    async modifyById(id, product) {
+        try {
+            let content = await this.readFile();
+            content = await content.map(el => {
+                if (el.id === id) {
+                    el = {
+                        id: id,
+                        ...product,
+                    };
+                    return el;
+                } else {
+                    return el;
+                }
+            })
+            await fs.promises.writeFile(this.file, JSON.stringify(content), 'utf-8');
+
+            return 'Objeto actualizado'
+
+        } catch (error) {
+            return error;
         }
     }
 }
