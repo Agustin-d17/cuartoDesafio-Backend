@@ -1,7 +1,7 @@
 import express, { Router } from 'express';
 import Contenedor from './classContenedor.js'
 
-const content = new Contenedor("./data/productos.json");
+const content = new Contenedor("./my-app/data/productos.json");
 
 const router = Router();
 
@@ -57,4 +57,4 @@ router.delete('/:id', (req, res) => {
     .then((response) => res.status(201).send(response))
 })
 
-export { router }
+export { router } 

@@ -14,4 +14,4 @@ const server = app.listen(PORT, () => {
 server.on('error', (err) => {console.log(err)});
 
 app.use("/api/productos/", router)
-app.use(express.static("./public"))
+app.use(express.static("./my-app/public"));

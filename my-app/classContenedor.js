@@ -20,10 +20,10 @@ export default class Contenedor {
         
             if (content.length !== 0){
                 let newId = parseInt(content[content.length - 1].id) + 1
-                await fs.promises.writeFile(this.file, JSON.stringify([...content, {...obj, id: newId}]), 'utf8');
+                await fs.promises.writeFile(this.file, JSON.stringify([...content, {...obj, id: `${newId}`}]), 'utf8');
                 console.log(`id del elemento agregado: ${newId}`)
             }else{
-                await fs.promises.writeFile(this.file, JSON.stringify([{...obj, id: 1}]), 'utf8');
+                await fs.promises.writeFile(this.file, JSON.stringify([{...obj, id: "1"}]), 'utf8');
                 console.log(`id del elemento agregado: ${1}`)
             }
 
@@ -57,7 +57,7 @@ export default class Contenedor {
           const content = await this.readFile()
           newContent = content.filter((product) => product.id !== id)
           await fs.promises.writeFile(this.file, JSON.stringify(newContent), 'utf-8')
-          console.log(`Se elimino correctamente el elemento de id: ${id}`)
+        //   console.log(newContent)
         } catch (error) {
           console.log(error);
         }
